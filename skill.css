@@ -1,0 +1,87 @@
+* { margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+ }
+
+body { 
+  font-family: "Poppins", 
+  sans-serif; 
+}
+
+/* Navigasi */
+nav {
+  background: #0F0E0E;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; top: 0; z-index: 100;
+}
+nav ul {
+  list-style: none;
+  display: flex; align-items: center;
+}
+nav ul li {
+  margin-left: 30px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+/* isi skill */
+.skills-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  min-height: 100vh;
+}
+.skills-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 50px auto;
+}
+
+/* Teks tengah */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  backdrop-filter: blur(1.5rem);
+}
+
+
+/* Posisi melingkar */
+.html { top: 0; left: 45%; transform: translate(-50%, 0); }
+.css { right: 0; top: 39%; transform: translate(0, -50%); }
+.js { top: 10%; left: 10%; transform: translate(0, 0); } 
+.php { left: 0; top: 39%; transform: translate(0, -50%); }
+.react { top: 10%; right: 10%; }
+
+/* gaya icon skil */
+.skill {
+  position: absolute;
+  font-size: 40px;
+  transition: transform 0.3s;
+}
+.skill:hover {
+  transform: scale(1.3);
+}
+
+

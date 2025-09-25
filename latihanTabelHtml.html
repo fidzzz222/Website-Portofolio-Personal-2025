@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjualan Produk Interaktif</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f5f5f5; }
+        h2 { text-align: center; margin-top: 40px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background-color: white; min-width: 600px; }
+        th, td { border: 1px solid #333; padding: 10px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        tfoot { background-color: #f2f2f2; font-weight: bold; }
+        .table-container { overflow-x: auto; }
+        .highlight { background-color: #ADD8E6; /* Warna biru muda */ }
+    </style>
+</head>
+<body>
+<div class="table-container">
+    <h2>Penjualan Produk (Interaktif)</h2>
+    <table id="produkPenjualan">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Produk</th>
+                <th>Jumlah Terjual</th>
+                <th>Harga Satuan</th>
+                <th>Total Harga</th>
+            </tr>
+        </thead>
+        <tbody contenteditable="true" oninput="updatePenjualan()">
+            <tr><td>1</td><td>Produk A</td><td>10</td><td>50000</td><td></td></tr>
+            <tr><td>2</td><td>Produk B</td><td>8</td><td>70000</td><td></td></tr>
+            <tr><td>3</td><td>Produk C</td><td>15</td><td>40000</td><td></td></tr>
+            <tr><td>4</td><td>Produk D</td><td>5</td><td>90000</td><td></td></tr>
+            <tr><td>5</td><td>Produk E</td><td>10</td><td>60000</td><td></td></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total Penjualan</td>
+                <td id="totalJual">0</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<script>
+function updatePenjualan() {
+    const table = document.getElementById('produkPenjualan');
+    let totalKeseluruhan = 0;
+
+    // Iterasi hanya pada baris di dalam tbody
+    const tbodyRows = table.tBodies[0].rows;
+    for (let i = 0; i < tbodyRows.length; i++) {
+        const row = tbodyRows[i]; 
+        const jumlahCell = row.cells[2]; 
+        const hargaCell = row.cells[3];  
+        const totalHargaCell = row.cells[4]; 
+        const noCell = row.cells[0]; 
+
+        const jumlah = parseInt(jumlahCell.innerText) || 0;
+        const harga = parseInt(hargaCell.innerText) || 0;
+
+        const totalHargaProduk = jumlah * harga;
+
+        totalHargaCell.innerText = totalHargaProduk.toLocaleString('id-ID');
+
+        totalKeseluruhan += totalHargaProduk;
+
+        // --- LOGIKA UNTUK BACKGROUND ---
+        noCell.classList.remove('highlight');
+
+        if (jumlah > 14) {
+            row.classList.add('highlight');
+        } else {
+            row.classList.remove('highlight');
+        }
+    }
+    document.getElementById('totalJual').innerText = totalKeseluruhan.toLocaleString('id-ID');
+}
+updatePenjualan();
+</script>
+<h2 style="text-align:center;">Latihan Tabel Jadwal Kelas</h2>
+<table>
+  <tr>
+    <th>Hari</th>
+    <th>Mata Pelajaran</th>
+    <th>Jam</th>
+    <th>Guru</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Senin</td>
+    <td>Matematika</td>
+    <td>08.00-09.30</td>
+    <td>Budi</td>
+  </tr>
+  <tr>
+    <td>IPA</td>
+    <td>09.45-11.15</td>
+    <td>Siti</td>
+  </tr>
+  <tr>
+    <td>Selasa</td>
+    <td>Bahasa Indonesia</td>
+    <td>08.00-09.30</td>
+    <td>Ani</td>
+  </tr>
+  <tr>
+    <td>Rabu</td>
+    <td>IPS</td>
+    <td>08.00-09.30</td>
+    <td>Deni</td>
+  </tr>
+  <tr>
+    <td>Kamis</td>
+    <td>Bahasa Jepang</td>
+    <td>09.00-10.30</td>
+    <td>Dani</td>
+  </tr>
+  <tr>re 
+    <td>Jumat</td>
+    <td>Bahasa Inggris</td>
+    <td>10.00-12.00</td>
+    <td>Robi</td>
+  </tr>
+  <tr>
+    <td>Sabtu</td>
+    <td>Olahraga</td>
+    <td>08.00-09.30</td>
+    <td>Rina</td>
+  </tr>
+  <tr style="background-color: red; font-weight: bold;">
+    <td colspan="1">Minggu</td>
+    <td colspan="3">Libur</td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+* 
+{
+  margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;
+}
+
+body { 
+  font-family: "Poppins", 
+  sans-serif; 
+}
+
+/* Navigasi */
+nav {
+  background: #0F0E0E;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; top: 0; z-index: 100;
+}
+nav ul {
+  list-style: none;
+  display: flex; align-items: center;
+}
+nav ul li { 
+  margin-left: 30px; 
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  background: #00bcd4;
+  color: white;
+}
+
+/* hero section (awal web)*/
+.hero {
+  height: 98vh;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 20px;
+}
+.content {
+  max-width: 600px;
+}
+.profile {
+  width: 140px; height: 140px;
+  border-radius: 50%; margin-bottom: 20px;
+  border: 3px solid #00bcd4;
+} 
+.hero h1 {
+  font-size: 36px; margin-bottom: 10px;
+}
+.hero h1 .highlight {
+  color: #00bcd4;
+}
+.highlight2 {
+  color: #F5F5F5;
+}
+.hero h2 {
+  font-size: 20px; margin-bottom: 15px; font-weight: 400; color: #CCCCCC;
+}
+.hero p {
+  font-size: 16px; margin-bottom: 25px; color: #aaa;
+}
+
+/* tombol */
+.btn-grup {
+  display: flex; justify-content: center; gap: 15px;
+}
+.btn {
+  background: #00bcd4; color: #fff; padding: 10px 20px;
+  border-radius: 25px; text-decoration: none; transition: 0.3s;
+}
+.btn:hover {
+  background: #0097a7;
+}
+.btn-outline {
+  background: transparent; border: 2px solid #00bcd4;
+}
+.btn-outline:hover {
+  background: #00bcd4; color: #fff;
+}
+
+/* Animsi mengetik */
+.ngetik {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00bcd4;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink .75s step-end infinite;
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Kedipan cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+
